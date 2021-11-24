@@ -1,0 +1,73 @@
+import java.util.*;
+class student
+{
+String name,usn;
+int marks[];
+int credits[];
+int subjects;
+double sgpa;
+int tc;
+void accept()
+{ tc=0;
+Scanner sc=new Scanner(System.in);
+System.out.println("enter the name and usn ");
+name=sc.next();
+usn=sc.next();
+System.out.println("enter the number of subjects");
+subjects=sc.nextInt();
+marks=new int[subjects];
+credits=new int[subjects];
+for(int i=0;i<subjects;i++)
+{
+System.out.println("enter the marks in subject "+(i+1));
+marks[i]=sc.nextInt();
+}
+for(int i=0;i<subjects;i++)
+{
+System.out.println("enter the credits for subject "+(i+1));
+credits[i]=sc.nextInt();
+tc+=credits[i];
+}
+}
+void sgp()
+{
+sgpa=0.0;
+for(int i=0;i<subjects;i++)
+{
+sgpa=(sgpa+(marks[i]*credits[i]));
+}
+sgpa=(double)sgpa/tc;
+}
+void display()
+{ 
+
+System.out.println("results");
+System.out.println("name :"+name);
+System.out.println("usn :"+usn);
+System.out.println("marks in each subject :");
+for(int i=0;i<subjects;i++)
+{
+System.out.println(marks[i]);
+}
+System.out.println("credits for each subject :");
+for(int i=0;i<subjects;i++)
+{
+System.out.println(credits[i]);
+}
+System.out.println("the sgpa :"+sgpa);
+}
+}
+
+class student1
+{ 
+public static void main(String args[])
+{
+
+student ob=new student();
+ob.accept();
+ob.sgp();
+ob.display();
+}
+}
+
+
