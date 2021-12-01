@@ -13,9 +13,7 @@ shape(int c)
 {
 dim1=c;
 }
-void printarea()
-{
-}
+abstract void printarea();
 }
 class rectangle extends shape
 {
