@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.lang.*;
+
+abstract class shape
+{
+int dim1,dim2;
+shape(int a, int b)
+{
+dim1=a;
+dim2=b;
+}
+shape(int c)
+{
+dim1=c;
+}
+void printarea()
+{
+}
+}
+class rectangle extends shape
+{
+rectangle(int a, int b)
+{
+super(a,b);
+}
+void printarea()
+{
+System.out.println("area of the rectangle is :"+ (dim1*dim2)+" "+"units" );
+}
+}
+class triangle extends shape
+{
+triangle(int a,int b)
+{
+super(a,b);
+}
+void printarea()
+{
+System.out.println("area of triangle is :"+ (float)((dim1*dim2)/2)+" "+"units");
+}
+}
+class circle extends shape
+{
+circle(int a)
+{
+super(a);
+}
+void printarea()
+{
+System.out.println("area of circle is :"+ (float)(3.14*dim1*dim1)+" "+"units");
+}
+}
+
+
+class area
+{
+public static void main(String args[])
+{
+triangle t=new triangle(6,6);
+rectangle r=new rectangle(4,5);
+circle c=new circle(1);
+
+t.printarea();
+r.printarea();
+c.printarea();
+}
+}
