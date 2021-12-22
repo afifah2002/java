@@ -1,0 +1,23 @@
+package cie;
+import java.util.Scanner;
+public class student
+{
+Scanner sc=new Scanner(System.in);
+public String usn,name;
+public int sem;
+public void accept()
+{
+System.out.println("enter the usn ");
+usn=sc.next();
+System.out.println("enter the name ");
+name=sc.next();
+System.out.println("enter the sem ");
+sem=sc.nextInt();
+}
+public void display()
+{
+System.out.println("name :"+name);
+System.out.println("usn :"+usn);
+System.out.println("sem :"+sem);
+}
+}
