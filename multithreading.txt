@@ -1,0 +1,44 @@
+class th extends Thread 
+{   
+    String name1;
+    int x1;
+    long time1;
+    Thread t=currentThread();
+    th(String name,int x,long time)
+    {   
+         super("college");//t.setName("college"); 
+       System.out.println(this); //System.out.println(t);         
+       name1=name;
+        x1=x;
+        time1=time;
+    }
+    public void run()
+    {
+        try 
+        {
+            for(int i=0;i<x1;i++)
+            {
+                System.out.println(name1);
+                t.sleep(time1);
+            }
+        }
+        catch(InterruptedException e)
+        {
+            
+        }
+        System.out.println("exiting thread");
+    }
+}
+
+
+class Main
+{
+public static void main (String[] args) {
+     th obj1=new th("bms college of engineering",2,5000);
+     th obj2=new th("cse",10,1000);
+     obj1.start();
+     obj2.start();
+    
+}
+
+}
